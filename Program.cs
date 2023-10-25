@@ -1,5 +1,8 @@
+using BookStoreApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.Configure<BookStoreDatabaseSettings>(
+    builder.Configuration.GetSection("BookStoreDatabase"));
 // Add services to the container.
 
 builder.Services.AddControllers();
